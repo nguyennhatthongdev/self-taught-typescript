@@ -10,7 +10,7 @@ import {
     signInWithEmailAndPassword,
     updatePassword,
     signOut,
-    connectAuthEmulator
+    connectAuthEmulator,
 } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js";
 
 const firebaseConfig = {
@@ -34,9 +34,7 @@ async function createUser(email, password) {
     return await createUserWithEmailAndPassword(auth, email, password);
 }
 
-// createUser('nguyennhatthongdev@gmail.com', '0987024119').then(r => {
-//     console.log(r);
-// })
+console.log(auth);
 
 $('#login-form').on('submit', async function (e) {
     e.preventDefault();
@@ -44,8 +42,8 @@ $('#login-form').on('submit', async function (e) {
     const password = $('#password').val();
 
     try {
-        await signIn(email, password);
-        console.log("oke");
+        const res = await signIn(email, password);
+        location.href = '/modules/features/index.html';
     } catch (e) {
         console.log("err sign in function", e);
     }
