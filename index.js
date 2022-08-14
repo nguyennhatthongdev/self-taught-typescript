@@ -14,12 +14,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: process.env.APIKEY,
+    apiKey: secrets.APIKEY,
     authDomain: "self-taught-typescript.firebaseapp.com",
     projectId: "self-taught-typescript",
     storageBucket: "self-taught-typescript.appspot.com",
     messagingSenderId: "206383101928",
-    appId: process.env.APPID,
+    appId: secrets.APPID,
     measurementId: "G-LGGZ1FG8X7"
 };
 
