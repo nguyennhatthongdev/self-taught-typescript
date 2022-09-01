@@ -10,53 +10,101 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
     <script>hljs.highlightAll();</script>
 </head>
-<body style="background-color: #f5f5f5">
+<body class="bg-dark">
 <div class="container mt-5">
-    <h3 class="mb-4">1. Lấy ngày cuối cùng của tháng</h3>
+    <table class="table table-bordered table-dark">
+        <tbody>
+        <tr class="thead-dark">
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>getFullYear()</td>
+            <td>Get the <strong>year</strong> as a four digit number (yyyy)</td>
+        </tr>
+        <tr>
+            <td>getMonth()</td>
+            <td>Get the <strong>month</strong> as a number (0-11)</td>
+        </tr>
+        <tr>
+            <td>getDate()</td>
+            <td>Get the <strong>day</strong> as a number (1-31)</td>
+        </tr>
+        <tr>
+            <td>getHours()</td>
+            <td>Get the <strong>hour</strong> (0-23)</td>
+        </tr>
+        <tr>
+            <td>getMinutes()</td>
+            <td>Get the <strong>minute</strong> (0-59)</td>
+        </tr>
+        <tr>
+            <td>getSeconds()</td>
+            <td>Get the <strong>second</strong> (0-59)</td>
+        </tr>
+        <tr>
+            <td>getMilliseconds()</td>
+            <td>Get the <strong>millisecond</strong> (0-999)</td>
+        </tr>
+        <tr>
+            <td>getTime()</td>
+            <td>Get the time (milliseconds since January 1, 1970)</td>
+        </tr>
+        <tr>
+            <td>getDay()</td>
+            <td>Get the weekday as a number (0-6)</td>
+        </tr>
+        <tr>
+            <td>Date.now()</td>
+            <td>Get the time. ECMAScript 5.</td>
+        </tr>
+        </tbody></table>
+
+    <h3 class="text-light mb-4">1. Lấy ngày cuối cùng của tháng</h3>
     <pre><code class="language-js">function getLastDayOfMonth(date) {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0);
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const date = new Date("2022-09-01");
 const lastDayOfMonth = getLastDayOfMonth(date).getDate();
 // log
 console.log("lastDayOfMonth", lastDayOfMonth); // lastDayOfMonth 30</code></pre>
 
 
-    <h3 class="mb-4">2. Lấy ngày cuối cùng của năm</h3>
+    <h3 class="mb-4 text-light">2. Lấy ngày cuối cùng của năm</h3>
     <pre><code class="language-js">function getLastDayOfYear(year) {
     const december = 11;
     return new Date(year, december, 31);
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const year = new Date('2022-09-01').getFullYear();
 const lastDayOfYear = getLastDayOfYear(year).getDate();
 // log
 console.log("lastDayOfYear", lastDayOfYear); // lastDayOfYear 31</code></pre>
 
-    <h3 class="mb-4">3. Lấy số ngày khoảng cách giữa 2 ngày</h3>
+    <h3 class="mb-4 text-light">3. Lấy số ngày khoảng cách giữa 2 ngày</h3>
     <pre><code class="language-js">function inDays(dateStart, dateEnd) {
     return (dateEnd.getTime() - dateStart.getTime()) / (24 * 3600 * 1000);
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-08-01')
 const dateEnd = new Date('2022-09-31')
 const inDay = inDays(dateStart, dateEnd);
 // log
 console.log("inDay", inDay); // inDay 61</code></pre>
 
-    <h3 class="mb-4">4. Lấy số tuần khoảng cách giữa 2 ngày</h3>
+    <h3 class="mb-4 text-light">4. Lấy số tuần khoảng cách giữa 2 ngày</h3>
     <pre><code class="language-js">function inWeeks(dateStart, dateEnd) {
     return (dateEnd.getTime() - dateStart.getTime()) / (24 * 3600 * 1000 * 7);
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-08-01')
 const dateEnd = new Date('2022-09-31')
 const inWeek = inWeeks(dateStart, dateEnd);
 // log
 console.log("inWeek", inWeek); // inWeek 8.714285714285714</code></pre>
 
-    <h3 class="mb-4">5. Lấy số tháng khoảng cách giữa 2 ngày</h3>
+    <h3 class="mb-4 text-light">5. Lấy số tháng khoảng cách giữa 2 ngày</h3>
     <pre><code class="language-js">function inMonths(dateStart, dateEnd) {
     let dateStartYear = dateStart.getFullYear();
     let dateEndYear = dateEnd.getFullYear();
@@ -65,69 +113,69 @@ console.log("inWeek", inWeek); // inWeek 8.714285714285714</code></pre>
 
     return (dateEndMonth + 12 * dateEndYear) - (dateStartMonth + 12 * dateStartYear);
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-08-01')
 const dateEnd = new Date('2022-09-31')
 const inMonth = inMonths(dateStart, dateEnd);
 // log
 console.log("inMonth", inMonth); // inMonth 2</code></pre>
 
-    <h3 class="mb-4">6. So sánh 2 ngày giống nhau</h3>
+    <h3 class="mb-4 text-light">6. So sánh 2 ngày giống nhau</h3>
     <pre><code class="language-js">function isSame(dateStart, dateEnd) {
     return dateStart.getTime() === dateEnd.getTime();
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-08-01')
 const dateEnd = new Date('2022-09-31');
 const same = isSame(dateStart, dateEnd);
 // log
 console.log("same", same); // same false</code></pre>
 
-    <h3 class="mb-4">7. So sánh ngày 1 trước ngày 2</h3>
+    <h3 class="mb-4 text-light">7. So sánh ngày 1 trước ngày 2</h3>
     <pre><code class="language-js">function isBefore(dateStart, dateEnd) {
     return dateStart.getTime() < dateEnd.getTime();
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-07-02')
 const dateEnd = new Date('2022-08-01');
 const before = isBefore(dateStart, dateEnd);
 // log
 console.log("before", before); // before true</code></pre>
 
-    <h3 class="mb-4">8. So sánh ngày 1 sau ngày 2</h3>
+    <h3 class="mb-4 text-light">8. So sánh ngày 1 sau ngày 2</h3>
     <pre><code class="language-js">function isAfter(dateStart, dateEnd) {
     return dateStart.getTime() > dateEnd.getTime();
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-07-02')
 const dateEnd = new Date('2022-08-01');
 const after = isAfter(dateStart, dateEnd);
 // log
 console.log("after", after); // after false</code></pre>
 
-    <h3 class="mb-4">9. So sánh ngày 1 trước hoặc bằng ngày 2</h3>
+    <h3 class="mb-4 text-light">9. So sánh ngày 1 trước hoặc bằng ngày 2</h3>
     <pre><code class="language-js">function isSameOrBefore(dateStart, dateEnd) {
     return dateStart.getTime() <= dateEnd.getTime();
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-07-02')
 const dateEnd = new Date('2022-07-02');
 const sameOrBefore = isSameOrBefore(dateStart, dateEnd);
 // log
 console.log("sameOrBefore", sameOrBefore); // sameOrBefore true</code></pre>
 
-    <h3 class="mb-4">10. So sánh ngày 1 sau hoặc bằng ngày 2</h3>
+    <h3 class="mb-4 text-light">10. So sánh ngày 1 sau hoặc bằng ngày 2</h3>
     <pre><code class="language-js">function isSameOrAfter(dateStart, dateEnd) {
     return dateStart.getTime() >= dateEnd.getTime();
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('2022-07-10')
 const dateEnd = new Date('2022-07-08');
 const sameOrAfter = isSameOrAfter(dateStart, dateEnd);
 // log
 console.log("isSameOrAfter", isSameOrAfter); // isSameOrAfter true</code></pre>
 
-    <h3 class="mb-4">11. Lấy ngày làm việc</h3>
+    <h3 class="mb-4 text-light">11. Lấy ngày làm việc</h3>
     <pre><code class="language-js">function getBusinessDatesCount(startDate, endDate) {
     let count = 0;
     const curDate = new Date(startDate.getTime());
@@ -138,58 +186,58 @@ console.log("isSameOrAfter", isSameOrAfter); // isSameOrAfter true</code></pre>
     }
     return count;
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const dateStart = new Date('05/03/2016');
 const dateEnd = new Date('05/10/2016');
 const numOfDates = getBusinessDatesCount(dateStart, dateEnd);
 // log
 console.log("getBusinessDatesCount", numOfDates); // getBusinessDatesCount 6</code></pre>
 
-    <h3 class="mb-4">12. Cộng thêm 1 ngày</h3>
+    <h3 class="mb-4 text-light">12. Cộng thêm 1 ngày</h3>
     <pre><code class="language-js">function nextDay(date) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const date = new Date('2022-08-31');
 const next = nextDay(date).toLocaleString();
 // log
 console.log("nextDay", next); // nextDay 9/1/2022, 12:00:00 AM</code></pre>
 
-    <h3 class="mb-4">13. Trở về trước 1 ngày</h3>
+    <h3 class="mb-4 text-light">13. Trở về trước 1 ngày</h3>
     <pre><code class="language-js">function prevDay(date) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate() + -1);
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const date = new Date('2022-08-31');
 const prev = prevDay(date).toLocaleString();
 // log
 console.log("prev", prev); // prev 8/30/2022, 12:00:00 AM</code></pre>
 
-    <h3 class="mb-4">14. Là ngày chủ nhật</h3>
+    <h3 class="mb-4 text-light">14. Là ngày chủ nhật</h3>
     <pre><code class="language-js">function isSunday(date) {
     return date.getDay() === 0;
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const date = new Date('2022-08-28');
 const isSun = isSunday(date);
 // log
 console.log("isSun", isSun); // isSun true</code></pre>
 
-    <h3 class="mb-4">15. Là ngày thứ 7</h3>
+    <h3 class="mb-4 text-light">15. Là ngày thứ 7</h3>
     <pre><code class="language-js">function isSaturday(date) {
     return date.getDay() === 6;
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const date = new Date('2022-08-27');
 const isSat = isSaturday(date);
 // log
 console.log("isSat", isSat); // isSat true</code></pre>
 
-    <h3 class="mb-4">15. Là ngày cuối tuần</h3>
+    <h3 class="mb-4 text-light">15. Là ngày cuối tuần</h3>
     <pre><code class="language-js">function isWeekend(date) {
     return date.getDay() === 6 || date.getDay() === 0;
 }</code></pre>
-    <h4 class="mb-4">Example:</h4>
+    <h4 class="mb-4 text-light">Example:</h4>
     <pre><code class="language-js">const date = new Date('2022-08-27');
 const isWeek = isWeekend(date);
 // log
