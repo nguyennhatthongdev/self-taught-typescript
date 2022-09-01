@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>JavaScript Date Objects</title>
     <!-- Bootstrap core CSS -->
     <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
@@ -10,8 +10,24 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
     <script>hljs.highlightAll();</script>
 </head>
-<body class="bg-dark">
+<body class="bg-dark text-white">
 <div class="container mt-5">
+    <h1 class="mt-4 mb-3">JavaScript Date Objects</h1>
+    <p class="mb-0">The JavaScript date object có thể sử dụng để lấy ngày, tháng và năm. Bạn có thể hiển thị bộ đếm thời gian trên trang web nhờ sự trợ giúp của JavaScript date object.</p>
+    <p class="mb-5">Bạn có thể sử dụng các Date constructors khác nhau để tạo date object. Nó cung cấp các methods get và set để lấy và đặt ngày, tháng, năm, giờ, phút và giấy</p>
+
+    <h1 class="mt-4">Constructor</h1>
+    <p>Bạn có thể sử dụng 4 variant of Date constructor để tạo date object.</p>
+    <ul class="mb-5">
+        <li>Date()</li>
+        <li>Date(milliseconds)</li>
+        <li>Date(dateString)</li>
+        <li>Date(year, month, day, hours, minutes, seconds, milliseconds)</li>
+    </ul>
+
+    <h1>JavaScript Date Methods</h1>
+    <p>Hãy xem danh sách các JavaScript date methods với mô tả của chúng.</p>
+
     <table class="table table-bordered table-dark">
         <tbody>
         <tr class="thead-dark">
@@ -20,43 +36,43 @@
         </tr>
         <tr>
             <td>getFullYear()</td>
-            <td>Get the <strong>year</strong> as a four digit number (yyyy)</td>
+            <td>Lấy <strong>year</strong> dưới dạng có 4 chữ số (yyyy)</td>
         </tr>
         <tr>
             <td>getMonth()</td>
-            <td>Get the <strong>month</strong> as a number (0-11)</td>
+            <td>Lấy <strong>month</strong> dưới dạng số (0-11)</td>
         </tr>
         <tr>
             <td>getDate()</td>
-            <td>Get the <strong>day</strong> as a number (1-31)</td>
+            <td>Lấy <strong>day</strong> dưới dạng số (1-31)</td>
         </tr>
         <tr>
             <td>getHours()</td>
-            <td>Get the <strong>hour</strong> (0-23)</td>
+            <td>Lấy <strong>hour</strong> (0-23)</td>
         </tr>
         <tr>
             <td>getMinutes()</td>
-            <td>Get the <strong>minute</strong> (0-59)</td>
+            <td>Lấy <strong>minute</strong> (0-59)</td>
         </tr>
         <tr>
             <td>getSeconds()</td>
-            <td>Get the <strong>second</strong> (0-59)</td>
+            <td>Lấy <strong>second</strong> (0-59)</td>
         </tr>
         <tr>
             <td>getMilliseconds()</td>
-            <td>Get the <strong>millisecond</strong> (0-999)</td>
+            <td>Lấy <strong>millisecond</strong> (0-999)</td>
         </tr>
         <tr>
             <td>getTime()</td>
-            <td>Get the time (milliseconds since January 1, 1970)</td>
+            <td>Lấy time (milliseconds since January 1, 1970)</td>
         </tr>
         <tr>
             <td>getDay()</td>
-            <td>Get the weekday as a number (0-6)</td>
+            <td>Lấy ngày trong tuần dưới dạng sô (0-6)</td>
         </tr>
         <tr>
             <td>Date.now()</td>
-            <td>Get the time. ECMAScript 5.</td>
+            <td>Lấy thời gian. ECMAScript 5.</td>
         </tr>
         </tbody></table>
 
@@ -233,7 +249,7 @@ const isSat = isSaturday(date);
 // log
 console.log("isSat", isSat); // isSat true</code></pre>
 
-    <h3 class="mb-4 text-light">15. Là ngày cuối tuần</h3>
+    <h3 class="mb-4 text-light">16. Là ngày cuối tuần</h3>
     <pre><code class="language-js">function isWeekend(date) {
     return date.getDay() === 6 || date.getDay() === 0;
 }</code></pre>
